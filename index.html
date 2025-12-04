@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hareesh Bagayiti - Full Stack Developer | AI/ML Enthusiast | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">HB</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#events" class="nav-link">Events</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <button id="theme-toggle" class="theme-btn">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Floating Background Blobs -->
+    <div class="floating-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="floating-icons">
+                <div class="float-icon" style="--delay: 0s"><i class="fab fa-react"></i></div>
+                <div class="float-icon" style="--delay: 0.5s"><i class="fab fa-python"></i></div>
+                <div class="float-icon" style="--delay: 1s"><i class="fab fa-js"></i></div>
+                <div class="float-icon" style="--delay: 1.5s"><i class="fab fa-node"></i></div>
+            </div>
+
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="gradient-text">Hareesh Bagayiti</span>
+                </h1>
+                
+                <div class="typewriter-container">
+                    <span class="typewriter"></span>
+                    <span class="cursor"></span>
+                </div>
+
+                <p class="hero-subtitle">Passionate developer eager to build amazing things. Specializing in Full Stack Development, AI/ML, and innovative digital solutions.</p>
+
+                <div class="hero-buttons">
+                    <a href="#" id="resume-download" class="btn btn-primary">
+                        <i class="fas fa-download"></i> Download Resume
+                    </a>
+                    <button class="btn btn-primary magnetic-btn" data-text="View Projects">
+                        <span>View Projects</span>
+                        <div class="btn-magnetic"></div>
+                    </button>
+                    <button class="btn btn-secondary magnetic-btn" id="contact-btn" data-text="Get In Touch">
+                        <span>Get In Touch</span>
+                        <div class="btn-magnetic"></div>
+                    </button>
+                </div>
+
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/hareesh-bagayiti-22b33b34b" target="_blank" class="social-link" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/HAREESSHP" target="_blank" class="social-link" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://hareesshp.github.io/protfolio-hareesh/" target="_blank" class="social-link" title="Portfolio">
+                        <i class="fas fa-globe"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-photo">
+                <img src="hareesh-photo.jpeg" alt="Hareesh Bagayiti" class="profile-photo">
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="glass-card">
+                        <p>
+                            I'm Hareesh Bagayiti, a passionate developer pursuing a Bachelor of Technology in Artificial Intelligence & Machine Learning 
+                            at Guru Nanak Institute of Technology, Hyderabad (2023-2027). I'm eager to build amazing things using modern technologies 
+                            and innovative approaches.
+                        </p>
+                        <p>
+                            My expertise spans Full Stack Development, AI/ML, and creative problem-solving. I have hands-on experience with HTML, CSS, 
+                            JavaScript, Python, Java, and various web technologies. I've completed multiple certifications including Python for Everybody 
+                            (Coursera), AI-ML Virtual Internship (Eduskills), and Python Full Stack Developer (Eduskills).
+                        </p>
+                        <p>
+                            I'm passionate about building solutions that make a real impact. From web applications to object detection systems, 
+                            I love tackling complex challenges and learning new technologies. Connect with me on LinkedIn or check out my projects on GitHub!
+                        </p>
+                    </div>
+                </div>
+
+                <div class="about-stats">
+                    <div class="stat-box">
+                        <div class="stat-number">6+</div>
+                        <div class="stat-label">Certifications</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Major Projects</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">2024</div>
+                        <div class="stat-label">Journey Started</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="parallax-bg"></div>
+        
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="python">Python</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="ai-ml">AI/ML</button>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project Card 1 -->
+                <div class="project-card" data-tilt data-category="python web">
+                    <div class="project-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">BloodConnect Platform</h3>
+                        <p class="project-description">
+                            A comprehensive blood donation management system connecting donors, recipients, and blood banks with real-time inventory tracking and emergency alerts.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://blood-donation-system-1-zf3b.onrender.com/" class="project-link live-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Live
+                            </a>
+                            <a href="https://github.com/HAREESSHP/BLOOD-DONATION-SYSTEM" class="project-link github-link" target="_blank">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="project-card" data-tilt data-category="python ai-ml">
+                    <div class="project-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Voice Assistant Object Detection</h3>
+                        <p class="project-description">
+                            A Python project using YOLOv5, OpenCV, and pyttsx3 to detect objects via webcam and announce them using text-to-speech.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">YOLOv5</span>
+                            <span class="tech-tag">OpenCV</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/HAREESSHP/object-detection.git" class="project-link live-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> View
+                            </a>
+                            <a href="https://github.com/HAREESSHP/object-detection.git" class="project-link github-link" target="_blank">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="project-card" data-tilt data-category="python">
+                    <div class="project-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-comments\"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Comparison Chatbot</h3>
+                        <p class="project-description">
+                            A chatbot project for comparing different electronic items using the Serper API to fetch information from online sources.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Serper API</span>
+                            <span class="tech-tag">NLP</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/HAREESSHP/comparision-chatbot.git" class="project-link live-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> View
+                            </a>
+                            <a href="https://github.com/HAREESSHP/comparision-chatbot.git" class="project-link github-link" target="_blank">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="skills-container">
+                <!-- Skill 1 -->
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h3>HTML</h3>
+                </div>
+
+                <!-- Skill 2 -->
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <h3>CSS</h3>
+                </div>
+
+                <!-- Skill 3 -->
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <h3>JavaScript</h3>
+                </div>
+
+                <!-- Skill 4 -->
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3>Python</h3>
+                </div>
+
+                <!-- Skill 5 -->
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fab fa-java"></i>
+                    </div>
+                    <h3>Java</h3>
+                </div>
+
+                <!-- Skill 6 -->
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI/ML</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience / Timeline Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Experience & Achievements</h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="timeline">
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-date">2025 </span>
+                        <h3>AI-ML Virtual Internship</h3>
+                        <p>Eduskills</p>
+                        <p class="timeline-description">
+                            Currently pursuing comprehensive AI and Machine Learning training. Building expertise in deep learning, 
+                            neural networks, and practical AI applications.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-date">2024 </span>
+                        <h3>Python Full Stack Developer Certification</h3>
+                        <p>Eduskills</p>
+                        <p class="timeline-description">
+                            Completed comprehensive Full Stack Development with Python. Mastered frontend and backend technologies 
+                            including web frameworks, databases, and deployment strategies.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-date">2024</span>
+                        <h3>Java: Mastering the Fundamentals</h3>
+                        <p>Scalar</p>
+                        <p class="timeline-description">
+                            Completed comprehensive Java fundamentals course. Strong foundation in OOP, data structures, and 
+                            enterprise Java applications.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-date">2023 - 2027</span>
+                        <h3>B.Tech in AI & Machine Learning</h3>
+                        <p>Guru Nanak Institute of Technology, Hyderabad</p>
+                        <p class="timeline-description">
+                            Pursuing Bachelor of Technology specializing in Artificial Intelligence and Machine Learning. 
+                            Gaining deep knowledge in AI algorithms, ML models, and practical implementations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="events">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Events & Competitions</h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <!-- Participated Events Timeline -->
+            <div class="events-category">
+                <h3 class="category-title">Hackathons & Competitions Participated</h3>
+                <div class="events-timeline">
+                    <div class="event-timeline-item">
+                        <div class="event-timeline-dot"></div>
+                        <div class="event-timeline-content glass-card">
+                            <h4>E-Yantra Robotics Competition</h4>
+                            <p class="event-date">IIT Bombay - 2024</p>
+                            <p class="event-description">Participated in the prestigious national-level competition focused on embedded systems, robotics control, and automation-based problem solving. Gained hands-on experience in hardware–software integration and real-time robotics tasks.</p>
+                        </div>
+                    </div>
+
+                    <div class="event-timeline-item">
+                        <div class="event-timeline-dot"></div>
+                        <div class="event-timeline-content glass-card">
+                            <h4>GeekForGeeks Hackathon</h4>
+                            <p class="event-date">Malla Reddy College - 2024</p>
+                            <p class="event-description">Competed in a large-scale coding and innovation hackathon, demonstrating strong skills in full-stack development, problem solving, and developing scalable technical solutions.</p>
+                        </div>
+                    </div>
+
+                    <div class="event-timeline-item">
+                        <div class="event-timeline-dot"></div>
+                        <div class="event-timeline-content glass-card">
+                            <h4>Robotics Club Member</h4>
+                            <p class="event-date">2024–2025</p>
+                            <p class="event-description">Active contributor to robotics mini-projects, sensor integration, automation workflows, and hardware–software co-design. Involved in experiments, testing, and workshop activities.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hosted/Worked Events Timeline -->
+            <div class="events-category">
+                <h3 class="category-title">Hackathons & Events Hosted/Worked</h3>
+                <div class="events-timeline">
+                    <div class="event-timeline-item hosted">
+                        <div class="event-timeline-dot"></div>
+                        <div class="event-timeline-content glass-card hosted-event">
+                            <h4>🏆 Departmental Hackathon – WINNER</h4>
+                            <p class="event-date">GNIT - 2025</p>
+                            <p class="event-description">TEAM KANYARASI – 1st Place. Won the departmental hackathon by building an impactful tech project integrating AI, automation, and user-centric design. Recognized for creativity, innovation, and practical implementation.</p>
+                        </div>
+                    </div>
+
+                    <div class="event-timeline-item hosted">
+                        <div class="event-timeline-dot"></div>
+                        <div class="event-timeline-content glass-card hosted-event">
+                            <h4>Technical Quiz Competition – WINNER</h4>
+                            <p class="event-date">2025</p>
+                            <p class="event-description">Led the team in inter-department technical quiz competitions and secured the winning position. Strengthened team coordination, quick reasoning, and subject expertise.</p>
+                        </div>
+                    </div>
+
+                    <div class="event-timeline-item hosted">
+                        <div class="event-timeline-dot"></div>
+                        <div class="event-timeline-content glass-card hosted-event">
+                            <h4>VisionX – Project Contributor & Marketing Lead</h4>
+                            <p class="event-date">2024–2025</p>
+                            <p class="event-description">Played a dual role in event coordination and marketing for VisionX cultural club. Contributed to planning and organizing events, workshops, and competitions. Managed outreach, promotions, and content creation to increase participation and visibility.</p>
+                        </div>
+                    </div>
+
+                    <div class="event-timeline-item hosted">
+                        <div class="event-timeline-dot"></div>
+                        <div class="event-timeline-content glass-card hosted-event">
+                            <h4>Hosted Technical Workshops & Hackathons</h4>
+                            <p class="event-date">GNIT - Multiple Events</p>
+                            <p class="event-description">Coordinated and hosted multiple technical events, including hackathons, coding sessions, and workshops. Managed event flow, guided participants, and supported successful execution.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item glass-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p><a href="mailto:bagayithiharish@gmail.com">bagayithiharish@gmail.com</a></p>
+                    </div>
+
+                    <div class="contact-item glass-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Phone</h3>
+                        <p><a href="tel:+919346315298">+91-9346315298</a></p>
+                    </div>
+
+                    <div class="contact-item glass-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Location</h3>
+                        <p>Hyderabad, India</p>
+                    </div>
+                </div>
+
+                <form class="contact-form glass-card" id="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                        <span class="input-focus"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                        <span class="input-focus"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" placeholder="Subject" required>
+                        <span class="input-focus"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <span class="input-focus"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top" class="scroll-top-btn">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Hareesh Bagayiti. All rights reserved. | Born: 04 May 2004</p>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/hareesh-bagayiti-22b33b34b" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/HAREESSHP" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://hareesshp.github.io/protfolio-hareesh/" target="_blank"><i class="fas fa-globe"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
