@@ -2679,6 +2679,10 @@ section {
         border-radius: 0.6rem;
     }
 
+    .project-card:hover {
+        transform: none !important;
+    }
+
     .project-image {
         height: 180px;
         border-radius: 0.5rem;
