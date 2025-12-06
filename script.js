@@ -282,21 +282,168 @@ filterBtns.forEach(btn => {
 });
 
 // ==========================================
+// CATCH ME IF YOU CAN - GAME LOGIC
+// ==========================================
+
+// Game Variables
+let gameActive = true;
+let targetElement = document.getElementById('movingTarget');
+let gameContainer = document.querySelector('.game-container');
+let contactModal = document.getElementById('contactModal');
+let closeModalBtn = document.getElementById('closeModal');
+let minDistance = 50; // Very small escape radius
+let escapeCounter = 0;
+let maxEscapes = 1; // Only 1 escape, then it's catchable
+
+// Function to generate random position
+function getRandomPosition() {
+    if (!gameContainer) return { x: 0, y: 0 };
+    
+    const containerRect = gameContainer.getBoundingClientRect();
+    const maxX = containerRect.width - 80; // 80 is target size
+    const maxY = containerRect.height - 80;
+    
+    return {
+        x: Math.random() * maxX,
+        y: Math.random() * maxY
+    };
+}
+
+// Function to update target position
+function moveTarget() {
+    if (!targetElement || !gameActive) return;
+    
+    const newPos = getRandomPosition();
+    targetElement.style.left = newPos.x + 'px';
+    targetElement.style.top = newPos.y + 'px';
+}
+
+// Initialize target position on page load
+window.addEventListener('load', function() {
+    if (targetElement && gameContainer) {
+        moveTarget();
+        escapeCounter = 0;
+        
+        // Move target every 2-2.5 seconds
+        const moveInterval = setInterval(() => {
+            if (!gameActive) {
+                clearInterval(moveInterval);
+                return;
+            }
+            moveTarget();
+            escapeCounter = 0; // Reset escape counter on natural move
+        }, 2000 + Math.random() * 500);
+    }
+});
+
+// Handle mouse movement for escape effect
+document.addEventListener('mousemove', function(e) {
+    if (!targetElement || !gameActive || !gameContainer) return;
+    
+    const targetRect = targetElement.getBoundingClientRect();
+    const targetCenterX = targetRect.left + targetRect.width / 2;
+    const targetCenterY = targetRect.top + targetRect.height / 2;
+    
+    // Calculate distance between mouse and target
+    const distanceX = e.clientX - targetCenterX;
+    const distanceY = e.clientY - targetCenterY;
+    const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+    
+    // If mouse is too close, escape! But only after a few escapes, it gives up
+    if (distance < minDistance && escapeCounter < maxEscapes) {
+        escapeCounter++;
+        moveTarget();
+        
+        // Add wiggle animation to show it's nervous
+        targetElement.style.animation = 'wiggle 0.2s ease';
+        setTimeout(() => {
+            if (gameActive) {
+                targetElement.style.animation = 'floatTarget 4s ease-in-out infinite';
+            }
+        }, 200);
+    }
+});
+
+// Handle target click to catch the target
+if (targetElement) {
+    targetElement.addEventListener('click', function(e) {
+        e.stopPropagation();
+        if (!gameActive) return;
+        
+        gameActive = false;
+        
+        // Add celebration animation
+        targetElement.style.animation = 'celebration 0.6s ease';
+        
+        // Show celebration message
+        setTimeout(() => {
+            if (contactModal) {
+                contactModal.classList.add('active');
+            }
+            gameActive = true;
+        }, 300);
+    });
+}
+
+// Handle modal close button
+if (closeModalBtn) {
+    closeModalBtn.addEventListener('click', function() {
+        if (contactModal) {
+            contactModal.classList.remove('active');
+            gameActive = true;
+        }
+    });
+}
+
+// Close modal when clicking outside content
+if (contactModal) {
+    contactModal.addEventListener('click', function(e) {
+        if (e.target === contactModal) {
+            contactModal.classList.remove('active');
+            gameActive = true;
+        }
+    });
+}
+
+// Add celebration animation
+const celebrationKeyframes = `
+    @keyframes celebration {
+        0% { transform: scale(1) rotate(0deg); }
+        25% { transform: scale(1.2) rotate(-10deg); }
+        50% { transform: scale(0.9) rotate(10deg); }
+        75% { transform: scale(1.15) rotate(-5deg); }
+        100% { transform: scale(1) rotate(0deg); }
+    }
+`;
+
+// Inject celebration keyframes if not already present
+const style = document.createElement('style');
+style.textContent = celebrationKeyframes;
+document.head.appendChild(style);
+
+// ==========================================
 // RESUME DOWNLOAD
 // ==========================================
 const resumeDownloadBtn = document.getElementById('resume-download');
+const resumeModalDownloadBtn = document.getElementById('resume-modal-download');
+
+function downloadResume(e) {
+    e.preventDefault();
+    const link = document.createElement('a');
+    link.href = 'HAREESH_RESUME.pdf';
+    link.download = 'HAREESH_Bagayiti_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    showNotification('Resume downloading...');
+}
 
 if (resumeDownloadBtn) {
-    resumeDownloadBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const link = document.createElement('a');
-        link.href = 'HAREESH_RESUME.pdf';
-        link.download = 'HAREESH_Bagayiti_Resume.pdf';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        showNotification('Resume downloading...');
-    });
+    resumeDownloadBtn.addEventListener('click', downloadResume);
+}
+
+if (resumeModalDownloadBtn) {
+    resumeModalDownloadBtn.addEventListener('click', downloadResume);
 }
 
 // ==========================================

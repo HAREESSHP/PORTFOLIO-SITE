@@ -1028,6 +1028,468 @@ section {
 }
 
 /* ==========================================
+   CATCH ME IF YOU CAN GAME SECTION
+   ========================================== */
+.catch-game-section {
+    padding: var(--spacing-xl) 0;
+    background: linear-gradient(135deg, rgba(236, 72, 153, 0.05), rgba(99, 102, 241, 0.05));
+    position: relative;
+    overflow: hidden;
+}
+
+.game-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+}
+
+.game-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: rgba(99, 102, 241, 0.05);
+    border: 2px solid var(--primary);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: var(--spacing-lg);
+}
+
+.moving-target {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+    user-select: none;
+    animation: floatTarget 4s ease-in-out infinite;
+}
+
+.moving-target:hover {
+    box-shadow: 0 15px 40px rgba(99, 102, 241, 0.6);
+}
+
+@keyframes floatTarget {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.1) rotate(360deg); }
+}
+
+@keyframes wiggle {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+.game-instruction {
+    position: absolute;
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Contact Modal Styles */
+.contact-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease;
+}
+
+.contact-modal.active {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    background: var(--bg);
+    border-radius: var(--radius-xl);
+    max-width: 500px;
+    width: 90%;
+    padding: 0;
+    overflow: hidden;
+    animation: slideUp 0.4s ease;
+    border: 1px solid var(--border);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.modal-close:hover {
+    transform: rotate(90deg);
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.modal-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.contact-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.contact-link-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.5rem;
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    color: var(--text);
+    text-decoration: none;
+    transition: all var(--transition-smooth);
+    cursor: pointer;
+}
+
+.contact-link-btn:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+    border-color: var(--primary);
+}
+
+.contact-link-btn i {
+    font-size: 1.5rem;
+}
+
+.contact-link-btn span {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN - GAME & MODAL
+   ========================================== */
+
+/* Tablets (768px and above) */
+@media (max-width: 1024px) {
+    .game-container {
+        height: 350px;
+    }
+
+    .moving-target {
+        width: 70px;
+        height: 70px;
+        font-size: 2rem;
+    }
+
+    .game-instruction {
+        font-size: 1rem;
+    }
+
+    .modal-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .contact-links {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+
+    .contact-link-btn {
+        padding: 1.25rem;
+    }
+}
+
+/* Small Tablets & Large Phones (600px - 768px) */
+@media (max-width: 768px) {
+    .catch-game-section {
+        padding: var(--spacing-lg) 0;
+    }
+
+    .game-subtitle {
+        font-size: 1rem;
+    }
+
+    .game-container {
+        height: 300px;
+        border-width: 1.5px;
+    }
+
+    .moving-target {
+        width: 65px;
+        height: 65px;
+        font-size: 1.8rem;
+        box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+    }
+
+    .moving-target:hover {
+        box-shadow: 0 12px 30px rgba(99, 102, 241, 0.5);
+    }
+
+    .game-instruction {
+        font-size: 0.95rem;
+    }
+
+    .modal-content {
+        max-width: 90vw;
+    }
+
+    .modal-header {
+        padding: 1.5rem;
+    }
+
+    .modal-header h2 {
+        font-size: 1.4rem;
+    }
+
+    .modal-close {
+        font-size: 1.8rem;
+    }
+
+    .modal-body {
+        padding: 1.5rem;
+    }
+
+    .modal-subtitle {
+        font-size: 1rem;
+    }
+
+    .contact-links {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.6rem;
+    }
+
+    .contact-link-btn {
+        padding: 1rem;
+        font-size: 0.85rem;
+    }
+
+    .contact-link-btn i {
+        font-size: 1.3rem;
+    }
+
+    .contact-link-btn span {
+        font-size: 0.85rem;
+    }
+}
+
+/* Mobile Phones (480px - 600px) */
+@media (max-width: 600px) {
+    .catch-game-section {
+        padding: var(--spacing-md) 0;
+    }
+
+    .game-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .game-container {
+        height: 280px;
+        border-width: 1.5px;
+        margin-top: var(--spacing-md);
+    }
+
+    .moving-target {
+        width: 60px;
+        height: 60px;
+        font-size: 1.6rem;
+        box-shadow: 0 6px 15px rgba(99, 102, 241, 0.25);
+    }
+
+    .moving-target:hover {
+        box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+    }
+
+    .game-instruction {
+        font-size: 0.9rem;
+    }
+
+    .modal-content {
+        max-width: 95vw;
+        border-radius: var(--radius-lg);
+    }
+
+    .modal-header {
+        padding: 1.25rem;
+    }
+
+    .modal-header h2 {
+        font-size: 1.25rem;
+    }
+
+    .modal-close {
+        font-size: 1.5rem;
+        padding: 0.25rem;
+    }
+
+    .modal-body {
+        padding: 1.25rem;
+    }
+
+    .modal-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+    }
+
+    .contact-links {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+
+    .contact-link-btn {
+        padding: 0.9rem;
+        border-radius: var(--radius-md);
+    }
+
+    .contact-link-btn i {
+        font-size: 1.2rem;
+    }
+
+    .contact-link-btn span {
+        font-size: 0.8rem;
+    }
+}
+
+/* Small Mobile Phones (Below 480px) */
+@media (max-width: 480px) {
+    .catch-game-section {
+        padding: var(--spacing-md) 0;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .game-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .game-container {
+        height: 250px;
+        border-width: 1.5px;
+    }
+
+    .moving-target {
+        width: 55px;
+        height: 55px;
+        font-size: 1.4rem;
+        box-shadow: 0 5px 12px rgba(99, 102, 241, 0.2);
+    }
+
+    .moving-target:hover {
+        box-shadow: 0 8px 20px rgba(99, 102, 241, 0.35);
+    }
+
+    .game-instruction {
+        font-size: 0.85rem;
+    }
+
+    .modal-content {
+        max-width: 98vw;
+    }
+
+    .modal-header {
+        padding: 1rem;
+    }
+
+    .modal-header h2 {
+        font-size: 1.15rem;
+    }
+
+    .modal-close {
+        font-size: 1.3rem;
+    }
+
+    .modal-body {
+        padding: 1rem;
+    }
+
+    .modal-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .contact-links {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .contact-link-btn {
+        padding: 0.8rem;
+        flex-direction: row;
+        justify-content: center;
+        gap: 0.75rem;
+    }
+
+    .contact-link-btn i {
+        font-size: 1.1rem;
+    }
+
+    .contact-link-btn span {
+        font-size: 0.75rem;
+    }
+}
+
+/* ==========================================
    CONTACT SECTION
    ========================================== */
 .contact {
@@ -1368,6 +1830,875 @@ section {
     .section-title { font-size: 1.5rem; }
     .stat-number { font-size: 2rem; }
 }
+
+/* ==========================================
+   COMPREHENSIVE MOBILE RESPONSIVE STYLES
+   ========================================== */
+
+/* EXTRA LARGE TABLETS & SMALL LAPTOPS (1024px - 1440px) */
+@media (max-width: 1440px) {
+    :root {
+        --spacing-xl: 60px;
+        --spacing-lg: 40px;
+    }
+
+    .container {
+        max-width: 1000px;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .btn {
+        padding: 0.9rem 1.8rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* TABLETS (768px - 1024px) */
+@media (max-width: 1024px) {
+    :root {
+        --spacing-xl: 50px;
+        --spacing-lg: 30px;
+        --spacing-md: 20px;
+    }
+
+    .container {
+        max-width: 900px;
+        padding: 0 20px;
+    }
+
+    /* Navbar */
+    .navbar {
+        padding: 1rem 2rem;
+    }
+
+    .nav-logo {
+        font-size: 1.3rem;
+    }
+
+    /* Hero Section */
+    .hero {
+        min-height: 500px;
+        padding: 50px 0;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .typewriter {
+        font-size: 1.3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .profile-photo {
+        width: 200px;
+        height: 200px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /* About Section */
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-content {
+        order: 2;
+    }
+
+    .about-image {
+        order: 1;
+        max-width: 100%;
+    }
+
+    /* Projects Grid */
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+
+    .skill-item {
+        padding: 1.5rem;
+    }
+
+    /* Experience */
+    .experience-timeline {
+        padding-left: 40px;
+    }
+
+    .timeline-dot {
+        width: 14px;
+        height: 14px;
+        left: -47px;
+    }
+
+    /* Events */
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .event-item {
+        padding: 1.5rem;
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 0.85rem 1.6rem;
+        font-size: 0.9rem;
+    }
+
+    .btn-sm {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* LARGE PHONES (600px - 768px) */
+@media (max-width: 768px) {
+    :root {
+        --spacing-xl: 40px;
+        --spacing-lg: 25px;
+        --spacing-md: 15px;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+
+    /* Navbar */
+    .navbar {
+        padding: 0.75rem 1.5rem;
+    }
+
+    .nav-logo {
+        font-size: 1.2rem;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    /* Hero Section */
+    .hero {
+        min-height: 450px;
+        padding: 40px 0;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .typewriter {
+        font-size: 1.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .profile-photo {
+        width: 180px;
+        height: 180px;
+    }
+
+    .spin-border {
+        width: 200px;
+        height: 200px;
+    }
+
+    /* Section Title */
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .section-header {
+        margin-bottom: 2rem;
+    }
+
+    /* About */
+    .about-description {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    /* Projects Grid */
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .project-card {
+        padding: 1.25rem;
+    }
+
+    .project-tag {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.75rem;
+    }
+
+    /* Skills */
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+    }
+
+    .skill-item {
+        padding: 1.25rem;
+        font-size: 0.95rem;
+    }
+
+    /* Experience */
+    .experience-timeline {
+        padding-left: 30px;
+    }
+
+    .timeline-item {
+        margin-bottom: 2rem;
+    }
+
+    .timeline-dot {
+        width: 12px;
+        height: 12px;
+        left: -39px;
+    }
+
+    .timeline-content {
+        padding: 1.25rem;
+    }
+
+    .timeline-year {
+        font-size: 0.9rem;
+    }
+
+    .timeline-title {
+        font-size: 1.1rem;
+    }
+
+    /* Events */
+    .events-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .event-item {
+        padding: 1.25rem;
+    }
+
+    .event-category {
+        font-size: 0.85rem;
+    }
+
+    .event-date {
+        font-size: 0.9rem;
+    }
+
+    /* Contact Form */
+    .contact-form {
+        gap: 1.2rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 0.75rem 0.9rem;
+        font-size: 0.95rem;
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .btn-sm {
+        padding: 0.55rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    /* Text */
+    p {
+        font-size: 0.95rem;
+    }
+}
+
+/* MEDIUM PHONES (480px - 600px) */
+@media (max-width: 600px) {
+    :root {
+        --spacing-xl: 30px;
+        --spacing-lg: 20px;
+        --spacing-md: 12px;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 0 12px;
+    }
+
+    html {
+        scroll-behavior: smooth;
+        font-size: 14px;
+    }
+
+    /* Navbar */
+    .navbar {
+        padding: 0.6rem 1rem;
+        position: fixed;
+    }
+
+    .nav-logo {
+        font-size: 1.1rem;
+    }
+
+    .nav-toggle {
+        font-size: 1.5rem;
+    }
+
+    body {
+        padding-top: 60px;
+    }
+
+    /* Hero */
+    .hero {
+        min-height: 400px;
+        padding: 30px 0;
+        margin-top: 20px;
+    }
+
+    .hero-title {
+        font-size: 1.9rem;
+        line-height: 1.3;
+    }
+
+    .typewriter {
+        font-size: 1rem;
+        height: 1.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+        margin-top: 0.8rem;
+    }
+
+    .profile-photo {
+        width: 150px;
+        height: 150px;
+    }
+
+    .spin-border {
+        width: 170px;
+        height: 170px;
+    }
+
+    .hero-buttons {
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+    }
+
+    .hero-social {
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+
+    /* Section */
+    .section {
+        padding: 30px 0;
+    }
+
+    .section-title {
+        font-size: 1.9rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .section-header {
+        margin-bottom: 1.5rem;
+    }
+
+    /* About */
+    .about-description {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .stat-box {
+        padding: 1rem;
+    }
+
+    .stat-number {
+        font-size: 1.8rem;
+    }
+
+    .stat-label {
+        font-size: 0.85rem;
+    }
+
+    /* Projects */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .project-card {
+        padding: 1rem;
+    }
+
+    .project-image {
+        height: 200px;
+    }
+
+    .project-tag {
+        padding: 0.35rem 0.7rem;
+        font-size: 0.7rem;
+    }
+
+    /* Skills */
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .skill-item {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .skill-icon {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Experience */
+    .experience-timeline {
+        padding-left: 25px;
+    }
+
+    .timeline-item {
+        margin-bottom: 1.5rem;
+    }
+
+    .timeline-dot {
+        width: 11px;
+        height: 11px;
+        left: -32px;
+        top: 5px;
+    }
+
+    .timeline-content {
+        padding: 1rem;
+        border-radius: 0.75rem;
+    }
+
+    .timeline-year {
+        font-size: 0.85rem;
+    }
+
+    .timeline-title {
+        font-size: 1rem;
+    }
+
+    .timeline-description {
+        font-size: 0.85rem;
+    }
+
+    /* Events */
+    .events-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .event-item {
+        padding: 1rem;
+    }
+
+    .event-category {
+        font-size: 0.8rem;
+    }
+
+    .event-date {
+        font-size: 0.85rem;
+    }
+
+    .event-title {
+        font-size: 1rem;
+        margin: 0.5rem 0;
+    }
+
+    .event-description {
+        font-size: 0.85rem;
+    }
+
+    /* Contact Form */
+    .contact-form {
+        gap: 1rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 0.7rem 0.8rem;
+        font-size: 0.9rem;
+        border-width: 1.5px;
+    }
+
+    .contact-form textarea {
+        min-height: 120px;
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 0.75rem 1.3rem;
+        font-size: 0.85rem;
+        border-radius: 0.6rem;
+    }
+
+    .btn-sm {
+        padding: 0.5rem 0.9rem;
+        font-size: 0.75rem;
+    }
+
+    /* Scroll to Top */
+    .scroll-to-top {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    /* Text */
+    p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.2rem; }
+    h4 { font-size: 1.1rem; }
+}
+
+/* SMALL PHONES (Below 480px) */
+@media (max-width: 480px) {
+    :root {
+        --spacing-xl: 25px;
+        --spacing-lg: 15px;
+        --spacing-md: 10px;
+    }
+
+    html {
+        scroll-behavior: smooth;
+        font-size: 13px;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    /* Navbar */
+    .navbar {
+        padding: 0.5rem 0.75rem;
+    }
+
+    .nav-logo {
+        font-size: 1rem;
+    }
+
+    .nav-toggle {
+        font-size: 1.3rem;
+    }
+
+    body {
+        padding-top: 55px;
+    }
+
+    /* Hero */
+    .hero {
+        min-height: 350px;
+        padding: 25px 0;
+        margin-top: 15px;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-title {
+        font-size: 1.7rem;
+        line-height: 1.25;
+        margin-bottom: 0.5rem;
+    }
+
+    .typewriter {
+        font-size: 0.9rem;
+        height: 1.35rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.85rem;
+        margin: 0.6rem 0 1rem;
+    }
+
+    .profile-photo {
+        width: 130px;
+        height: 130px;
+        margin: 0 auto;
+    }
+
+    .spin-border {
+        width: 150px;
+        height: 150px;
+    }
+
+    .hero-buttons {
+        gap: 0.6rem;
+        margin-top: 1.2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-social {
+        gap: 0.8rem;
+        margin-top: 1.2rem;
+        justify-content: center;
+    }
+
+    /* Section */
+    .section {
+        padding: 25px 0;
+    }
+
+    .section-title {
+        font-size: 1.7rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .section-header {
+        margin-bottom: 1.2rem;
+    }
+
+    /* About */
+    .about-description {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+    }
+
+    .stat-box {
+        padding: 0.8rem;
+        border-radius: 0.5rem;
+    }
+
+    .stat-number {
+        font-size: 1.5rem;
+    }
+
+    .stat-label {
+        font-size: 0.75rem;
+    }
+
+    /* Projects */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .project-card {
+        padding: 0.9rem;
+        border-radius: 0.6rem;
+    }
+
+    .project-image {
+        height: 180px;
+        border-radius: 0.5rem;
+    }
+
+    .project-tag {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.65rem;
+    }
+
+    /* Skills */
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+
+    .skill-item {
+        padding: 0.8rem;
+        font-size: 0.85rem;
+        border-radius: 0.5rem;
+    }
+
+    .skill-icon {
+        font-size: 1.8rem;
+        margin-bottom: 0.4rem;
+    }
+
+    /* Experience */
+    .experience-timeline {
+        padding-left: 20px;
+    }
+
+    .timeline-item {
+        margin-bottom: 1.2rem;
+    }
+
+    .timeline-dot {
+        width: 10px;
+        height: 10px;
+        left: -27px;
+        top: 3px;
+    }
+
+    .timeline-content {
+        padding: 0.9rem;
+        border-radius: 0.5rem;
+    }
+
+    .timeline-year {
+        font-size: 0.8rem;
+    }
+
+    .timeline-title {
+        font-size: 0.95rem;
+        margin: 0.3rem 0;
+    }
+
+    .timeline-description {
+        font-size: 0.8rem;
+    }
+
+    /* Events */
+    .events-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .event-item {
+        padding: 0.9rem;
+        border-radius: 0.5rem;
+    }
+
+    .event-category {
+        font-size: 0.75rem;
+    }
+
+    .event-date {
+        font-size: 0.8rem;
+    }
+
+    .event-title {
+        font-size: 0.95rem;
+        margin: 0.4rem 0;
+    }
+
+    .event-description {
+        font-size: 0.8rem;
+    }
+
+    /* Contact Form */
+    .contact-form {
+        gap: 0.9rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 0.65rem 0.7rem;
+        font-size: 0.9rem;
+        border-width: 1px;
+        border-radius: 0.5rem;
+    }
+
+    .contact-form textarea {
+        min-height: 100px;
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.8rem;
+        border-radius: 0.5rem;
+    }
+
+    .btn-sm {
+        padding: 0.45rem 0.8rem;
+        font-size: 0.7rem;
+    }
+
+    /* Scroll to Top */
+    .scroll-to-top {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    /* Text */
+    p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    h1 { font-size: 1.6rem; }
+    h2 { font-size: 1.4rem; }
+    h3 { font-size: 1.1rem; }
+    h4 { font-size: 1rem; }
+
+    /* Modal */
+    .modal-content {
+        max-width: 95vw;
+    }
+
+    .modal-header {
+        padding: 1rem;
+    }
+
+    .modal-header h2 {
+        font-size: 1.15rem;
+    }
+
+    .modal-body {
+        padding: 1rem;
+    }
+
+    .contact-links {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 .hidden { display: none; }
 .visible { display: block; }
