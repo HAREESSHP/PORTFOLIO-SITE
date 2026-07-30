@@ -63,28 +63,23 @@ body {
     line-height: 1.7;
     overflow-x: hidden;
 }
-
 ::selection {
     background: var(--primary);
     color: white;
 }
-
 img {
     max-width: 100%;
     height: auto;
     display: block;
 }
-
 a {
     color: var(--primary);
     text-decoration: none;
     transition: color var(--transition);
 }
-
 a:hover {
     color: var(--primary-dark);
 }
-
 .container {
     max-width: var(--max-width);
     margin: 0 auto;
