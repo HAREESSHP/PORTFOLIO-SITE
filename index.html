@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ expe<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -138,48 +138,63 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Skills & Technologies</h2>
-                <p class="section-subtitle">Technologies I work with on a daily basis</p>
+                <p class="section-subtitle">Hover over a category to explore my skills</p>
             </div>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fab fa-html5"></i></div>
-                    <h3>HTML5</h3>
+            <div class="skills-categories" id="skillsCategories">
+                <!-- Frontend -->
+                <div class="skill-category" data-category="frontend">
+                    <div class="category-header">
+                        <div class="category-icon"><i class="fas fa-code"></i></div>
+                        <h3 class="category-name">Frontend</h3>
+                        <i class="fas fa-chevron-down category-arrow"></i>
+                    </div>
+                    <div class="category-techs">
+                        <span class="tech-badge">HTML</span>
+                        <span class="tech-badge">CSS</span>
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">React</span>
+                    </div>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
-                    <h3>CSS3</h3>
+
+                <!-- Backend -->
+                <div class="skill-category" data-category="backend">
+                    <div class="category-header">
+                        <div class="category-icon"><i class="fas fa-server"></i></div>
+                        <h3 class="category-name">Backend</h3>
+                        <i class="fas fa-chevron-down category-arrow"></i>
+                    </div>
+                    <div class="category-techs">
+                        <span class="tech-badge">Node.js</span>
+                        <span class="tech-badge">Express.js</span>
+                        <span class="tech-badge">Python</span>
+                    </div>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fab fa-js"></i></div>
-                    <h3>JavaScript</h3>
+
+                <!-- Database -->
+                <div class="skill-category" data-category="database">
+                    <div class="category-header">
+                        <div class="category-icon"><i class="fas fa-database"></i></div>
+                        <h3 class="category-name">Database</h3>
+                        <i class="fas fa-chevron-down category-arrow"></i>
+                    </div>
+                    <div class="category-techs">
+                        <span class="tech-badge">SQL</span>
+                        <span class="tech-badge">MongoDB</span>
+                    </div>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fab fa-python"></i></div>
-                    <h3>Python</h3>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fab fa-java"></i></div>
-                    <h3>Java</h3>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-database"></i></div>
-                    <h3>MongoDB</h3>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-code-branch"></i></div>
-                    <h3>Node.js</h3>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-brain"></i></div>
-                    <h3>AI/ML</h3>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
-                    <h3>Git</h3>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-flask"></i></div>
-                    <h3>Flask</h3>
+
+                <!-- Tools -->
+                <div class="skill-category" data-category="tools">
+                    <div class="category-header">
+                        <div class="category-icon"><i class="fas fa-tools"></i></div>
+                        <h3 class="category-name">Tools</h3>
+                        <i class="fas fa-chevron-down category-arrow"></i>
+                    </div>
+                    <div class="category-techs">
+                        <span class="tech-badge">VS Code</span>
+                        <span class="tech-badge">Windsurf</span>
+                        <span class="tech-badge">Antigravity</span>
+                    </div>
                 </div>
             </div>
         </div>

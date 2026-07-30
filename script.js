@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Observe all cards and items for fade-in animation
     document.querySelectorAll(
-        '.project-card, .skill-card, .achievement-card, .timeline-item, .stat-item, .contact-item'
+        '.project-card, .skill-category, .achievement-card, .timeline-item, .stat-item, .contact-item'
     ).forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
