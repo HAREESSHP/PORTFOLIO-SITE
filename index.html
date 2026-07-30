@@ -3,604 +3,425 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Hareesh Bagayiti - Full Stack Developer & AI/ML Enthusiast. Specializing in web development, machine learning, and innovative digital solutions. View my projects, skills, and experience.">
-    <meta name="keywords" content="Full Stack Developer, AI/ML Developer, Python Developer, Web Development, Machine Learning, Robotics, Portfolio">
+    <meta name="description" content="Hareesh Bagayiti - Full Stack Developer & AI/ML Enthusiast. Portfolio showcasing projects, skills, and experience in web development and machine learning.">
+    <meta name="keywords" content="Full Stack Developer, AI/ML Developer, Python Developer, Web Development, Portfolio">
     <meta name="author" content="Hareesh Bagayiti">
-    <meta name="theme-color" content="#6366f1">
     
-    <!-- Open Graph Tags for Social Sharing -->
-    <meta property="og:type" content="website">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Hareesh Bagayiti - Full Stack Developer">
+    <meta property="og:description" content="Full Stack Developer & AI/ML Enthusiast. Building scalable digital solutions.">
+    <meta property="og:image" content="hareesh-photo.jpeg">
     <meta property="og:url" content="https://hareesshp.github.io/PORTFOLIO-SITE/">
-    <meta property="og:title" content="Hareesh Bagayiti - Full Stack Developer & AI/ML Enthusiast">
-    <meta property="og:description" content="Explore my portfolio featuring full stack development projects, AI/ML applications, and robotics expertise. Currently pursuing B.Tech in AI & Machine Learning.">
-    <meta property="og:image" content="https://hareesshp.github.io/PORTFOLIO-SITE/hareesh-photo.jpeg">
-    <meta property="og:image:alt" content="Hareesh Bagayiti - Full Stack Developer">
-    <meta property="og:site_name" content="Hareesh Bagayiti Portfolio">
     
-    <!-- Twitter Card Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Hareesh Bagayiti - Full Stack Developer & AI/ML Enthusiast">
-    <meta name="twitter:description" content="Full Stack Developer | AI/ML Enthusiast | Robotics Passion | B.Tech in AI & ML at GNIT">
-    <meta name="twitter:image" content="https://hareesshp.github.io/PORTFOLIO-SITE/hareesh-photo.jpeg">
-    
-    <!-- Additional SEO -->
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="English">
-    <meta name="revisit-after" content="30 days">
-    
-    <title>Hareesh Bagayiti - Full Stack Developer | AI/ML Enthusiast | Portfolio</title>
+    <title>Hareesh Bagayiti | Full Stack Developer</title>
     <link rel="canonical" href="https://hareesshp.github.io/PORTFOLIO-SITE/">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
-            <div class="nav-logo">
-                <span class="logo-text">HB</span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
+            <a href="#home" class="nav-logo">HB</a>
+            <ul class="nav-menu" id="navMenu">
                 <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#events" class="nav-link">Events</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <div class="nav-toggle">
-                <button id="theme-toggle" class="theme-btn">
-                    <i class="fas fa-moon"></i>
+            <div class="nav-actions">
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
                 </button>
             </div>
         </div>
     </nav>
 
-    <!-- Floating Background Blobs -->
-    <div class="floating-blobs">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
-    </div>
-
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="floating-icons">
-                <div class="float-icon" style="--delay: 0s"><i class="fab fa-react"></i></div>
-                <div class="float-icon" style="--delay: 0.5s"><i class="fab fa-python"></i></div>
-                <div class="float-icon" style="--delay: 1s"><i class="fab fa-js"></i></div>
-                <div class="float-icon" style="--delay: 1.5s"><i class="fab fa-node"></i></div>
-            </div>
-
-            <div class="hero-text">
-                <h1 class="hero-title">
-                    <span class="gradient-text">Hareesh Bagayiti</span>
-                </h1>
-                
-                <div class="typewriter-container">
-                    <span class="typewriter"></span>
-                    <span class="cursor"></span>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <p class="hero-greeting">Hi, I'm</p>
+                    <h1 class="hero-name">Hareesh Bagayiti</h1>
+                    <div class="hero-role">
+                        <span class="typewriter"></span><span class="cursor">|</span>
+                    </div>
+                    <p class="hero-description">
+                        Full-stack developer and AI/ML enthusiast pursuing B.Tech at GNIT, Hyderabad. 
+                        I build scalable web applications and intelligent systems that solve real-world problems.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="HAREESH_RESUME.pdf" class="btn btn-outline" download>
+                            <i class="fas fa-download"></i> Resume
+                        </a>
+                    </div>
+                    <div class="hero-social">
+                        <a href="https://github.com/HAREESSHP" target="_blank" rel="noopener" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/hareesh-bagayiti-22b33b34b" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="mailto:bagayithiharish@gmail.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
                 </div>
-
-                <p class="hero-subtitle">Enthusiastic software developer with hands-on experience in Full-Stack Development.<br>Skilled in building intelligent applications using AI/ML technologies.<br>Driven to create scalable, efficient, and real-world digital solutions.</p>
-
-                <div class="hero-buttons">
-                    <a href="HAREESH_RESUME.pdf" id="resume-download" class="btn btn-primary" download>
-                        <i class="fas fa-download"></i> Download Resume
-                    </a>
-                    <button class="btn btn-primary magnetic-btn" data-text="View Projects">
-                        <span>View Projects</span>
-                        <div class="btn-magnetic"></div>
-                    </button>
-                    <button class="btn btn-secondary magnetic-btn" id="contact-btn" data-text="Get In Touch">
-                        <span>Get In Touch</span>
-                        <div class="btn-magnetic"></div>
-                    </button>
+                <div class="hero-image">
+                    <div class="hero-image-wrapper">
+                        <img src="hareesh-photo.jpeg" alt="Hareesh Bagayiti" class="profile-photo">
+                    </div>
                 </div>
-
-                <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/hareesh-bagayiti-22b33b34b" target="_blank" class="social-link" title="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/HAREESSHP" target="_blank" class="social-link" title="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://hareesshp.github.io/PORTFOLIO-SITE/" target="_blank" class="social-link" title="Portfolio">
-                        <i class="fas fa-globe"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="hero-photo">
-                <img src="hareesh-photo.jpeg" alt="Hareesh Bagayiti - Full Stack Developer and AI/ML Enthusiast" class="profile-photo">
-            </div>
-        </div>
-
-        <div class="scroll-indicator">
-            <span>Scroll to explore</span>
-            <div class="mouse">
-                <div class="wheel"></div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="section about">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">About Me</h2>
-                <div class="title-underline"></div>
+                <p class="section-subtitle">A brief introduction about who I am and what I do</p>
             </div>
-
-            <div class="about-content">
-                <div class="about-text">
-                    <div class="glass-card">
-                        <p>
-                            I'm Hareesh Bagayiti, a passionate creator fueled by curiosity and purpose, pursuing a B.Tech in AI & ML at Guru Nanak Institute of Technology, Hyderabad (2023–2027). For me, technology isn't just code — it's about shaping ideas that solve problems, inspire possibilities, and make an impact.
-                        </p>
-                        <p>
-                            My journey blends Full-Stack Development and AI/ML, with hands-on experience in HTML, CSS, JavaScript, Python, Java, and modern frameworks. From small experiments to building meaningful real-world solutions, I've strengthened my foundation through certifications like Python for Everybody (Coursera), AI-ML Virtual Internship (Eduskills), and Python Full Stack Developer (Eduskills).
-                        </p>
-                        <p>
-                            I thrive on challenges and believe every problem is an opportunity to grow. Whether it's crafting web apps, designing intelligent systems, or solving complex problems, I build with intention and impact. Dive into my journey on LinkedIn or explore my projects on GitHub!
-                        </p>
+            <div class="about-grid">
+                <div class="about-card">
+                    <p>
+                        I'm <strong>Hareesh Bagayiti</strong>, a B.Tech student in <strong>Computer Science (AI & ML)</strong> at Guru Nanak Institute of Technology, Hyderabad (2023–2027), with a strong interest in <strong>Full-Stack Development, Artificial Intelligence, and Backend Engineering</strong>.
+                    </p>
+                    <p>
+                        I enjoy building scalable applications that solve real-world problems. My experience includes developing AI-powered platforms, full-stack web applications, and developer-focused tools using <strong>HTML, CSS, JavaScript, Python, Java, React, Node.js, Express, MongoDB, and Git</strong>.
+                    </p>
+                    <p>
+                        Beyond development, I actively participate in hackathons, collaborate on team projects, and continuously improve my problem-solving skills through Data Structures & Algorithms. I believe in writing clean, maintainable code and building products that deliver meaningful value.
+                    </p>
+                    <p>
+                        I'm always eager to learn new technologies, contribute to impactful projects, and connect with developers and recruiters who share a passion for innovation.
+                    </p>
+                </div>
+                <div class="about-right">
+                    <div class="about-photo-card">
+                        <div class="about-photo-wrapper">
+                            <img src="l4.jpeg" alt="Hareesh Bagayiti">
+                        </div>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">6+</span>
+                            <span class="stat-label">Certifications</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">2023</span>
+                            <span class="stat-label">Started Journey</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Hackathon Wins</span>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="about-stats">
-                    <div class="stat-box">
-                        <div class="stat-number">6+</div>
-                        <div class="stat-label">Certifications</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-number">5+</div>
-                        <div class="stat-label">Major Projects</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-number">2024</div>
-                        <div class="stat-label">Journey Started</div>
-                    </div>
+    <!-- Skills Section -->
+    <section id="skills" class="section skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Skills & Technologies</h2>
+                <p class="section-subtitle">Technologies I work with on a daily basis</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fab fa-html5"></i></div>
+                    <h3>HTML5</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+                    <h3>CSS3</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fab fa-js"></i></div>
+                    <h3>JavaScript</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fab fa-python"></i></div>
+                    <h3>Python</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fab fa-java"></i></div>
+                    <h3>Java</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-database"></i></div>
+                    <h3>MongoDB</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-code-branch"></i></div>
+                    <h3>Node.js</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-brain"></i></div>
+                    <h3>AI/ML</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
+                    <h3>Git</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-flask"></i></div>
+                    <h3>Flask</h3>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="parallax-bg"></div>
-        
+    <section id="projects" class="section projects">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Featured Projects</h2>
-                <div class="title-underline"></div>
+                <p class="section-subtitle">Real-world applications I've built from the ground up</p>
             </div>
-
-            <div class="project-filters">
-                <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="python">Python</button>
-                <button class="filter-btn" data-filter="web">Web</button>
-                <button class="filter-btn" data-filter="ai-ml">AI/ML</button>
-            </div>
-
             <div class="projects-grid">
-
-                    <!-- Project Card 1 -->
-                    <div class="project-card" data-tilt data-category="python web">
-                        <div class="project-image">
-                            <div class="image-placeholder">
-                                <i class="fas fa-heart"></i>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">BloodConnect Platform</h3>
-                            <p class="project-description">
-                                A comprehensive blood donation management system connecting donors, recipients, and blood banks with real-time inventory tracking and emergency alerts.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Python</span>
-                                <span class="tech-tag">Flask</span>
-                                <span class="tech-tag">MongoDB</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://blood-donation-system-1-zf3b.onrender.com/" class="project-link live-link" target="_blank">
-                                    <i class="fas fa-external-link-alt"></i> Live
-                                </a>
-                                <a href="https://github.com/HAREESSHP/BLOOD-DONATION-SYSTEM" class="project-link github-link" target="_blank">
-                                    <i class="fab fa-github"></i> Code
-                                </a>
-                            </div>
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-heart"></i></div>
+                        <div class="project-links">
+                            <a href="https://blood-donation-system-1-zf3b.onrender.com/" target="_blank" rel="noopener" aria-label="Live demo">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="https://github.com/HAREESSHP/BLOOD-DONATION-SYSTEM" target="_blank" rel="noopener" aria-label="Source code">
+                                <i class="fab fa-github"></i>
+                            </a>
                         </div>
                     </div>
-
-                    <!-- Project Card 2 -->
-                    <div class="project-card" data-tilt data-category="python ai-ml">
-                        <div class="project-image">
-                            <div class="image-placeholder">
-                                <i class="fas fa-brain"></i>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">HOSPITAL Management System</h3>
-                            <p class="project-description">
-                                Developed a hospital management system to digitally manage patients, doctors, appointments, and medical records, improving operational efficiency and reducing manual workload.<br>
-                                <strong>Jan, 2025 - Apr, 2025</strong><br>
-                                Developed a full-stack hospital management system using Node.js.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Node.js</span>
-                                <span class="tech-tag">Full Stack</span>
-                                <span class="tech-tag">Web App</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/HAREESSHP/HOSPITAL" class="project-link live-link" target="_blank">
-                                    <i class="fas fa-external-link-alt"></i> View
-                                </a>
-                                <a href="https://github.com/HAREESSHP/HOSPITAL" class="project-link github-link" target="_blank">
-                                    <i class="fab fa-github"></i> Code
-                                </a>
-                            </div>
-                        </div>
+                    <h3 class="project-title">BloodConnect Platform</h3>
+                    <p class="project-description">
+                        A comprehensive blood donation management system connecting donors, recipients, 
+                        and blood banks with real-time inventory tracking and emergency alerts.
+                    </p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>Flask</span>
+                        <span>MongoDB</span>
                     </div>
-
-                    <!-- Project Card 3 -->
-                    <div class="project-card" data-tilt data-category="python">
-                        <div class="project-image">
-                            <div class="image-placeholder">
-                                <i class="fas fa-comments"></i>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Comparison Chatbot</h3>
-                            <p class="project-description">
-                                A chatbot project for comparing different electronic items using the Serper API to fetch information from online sources.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Python</span>
-                                <span class="tech-tag">Serper API</span>
-                                <span class="tech-tag">NLP</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/HAREESSHP/comparision-chatbot.git" class="project-link live-link" target="_blank">
-                                    <i class="fas fa-external-link-alt"></i> View
-                                </a>
-                                <a href="https://github.com/HAREESSHP/comparision-chatbot.git" class="project-link github-link" target="_blank">
-                                    <i class="fab fa-github"></i> Code
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Technical Skills</h2>
-                <div class="title-underline"></div>
-            </div>
-
-            <div class="skills-container">
-                <!-- Skill 1 -->
-                <div class="skill-item">
-                    <div class="skill-icon">
-                        <i class="fab fa-html5"></i>
-                    </div>
-                    <h3>HTML</h3>
                 </div>
 
-                <!-- Skill 2 -->
-                <div class="skill-item">
-                    <div class="skill-icon">
-                        <i class="fab fa-css3-alt"></i>
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-hospital"></i></div>
+                        <div class="project-links">
+                            <a href="https://github.com/HAREESSHP/HOSPITAL" target="_blank" rel="noopener" aria-label="Source code">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
                     </div>
-                    <h3>CSS</h3>
+                    <h3 class="project-title">Hospital Management System</h3>
+                    <p class="project-description">
+                        A full-stack hospital management system to digitally manage patients, doctors, 
+                        appointments, and medical records, improving operational efficiency.
+                    </p>
+                    <div class="project-tech">
+                        <span>Node.js</span>
+                        <span>Full Stack</span>
+                        <span>Web App</span>
+                    </div>
                 </div>
 
-                <!-- Skill 3 -->
-                <div class="skill-item">
-                    <div class="skill-icon">
-                        <i class="fab fa-js"></i>
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-comments"></i></div>
+                        <div class="project-links">
+                            <a href="https://github.com/HAREESSHP/comparision-chatbot.git" target="_blank" rel="noopener" aria-label="Source code">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
                     </div>
-                    <h3>JavaScript</h3>
-                </div>
-
-                <!-- Skill 4 -->
-                <div class="skill-item">
-                    <div class="skill-icon">
-                        <i class="fab fa-python"></i>
+                    <h3 class="project-title">Comparison Chatbot</h3>
+                    <p class="project-description">
+                        An intelligent chatbot for comparing electronic items using the Serper API 
+                        to fetch and analyze product information from online sources.
+                    </p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>Serper API</span>
+                        <span>NLP</span>
                     </div>
-                    <h3>Python</h3>
-                </div>
-
-                <!-- Skill 5 -->
-                <div class="skill-item">
-                    <div class="skill-icon">
-                        <i class="fab fa-java"></i>
-                    </div>
-                    <h3>Java</h3>
-                </div>
-
-                <!-- Skill 6 -->
-                <div class="skill-item">
-                    <div class="skill-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3>AI/ML</h3>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience / Timeline Section -->
-    <section id="experience" class="experience">
+    <!-- Experience Section -->
+    <section id="experience" class="section experience">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Experience & Achievements</h2>
-                <div class="title-underline"></div>
+                <h2 class="section-title">Experience & Education</h2>
+                <p class="section-subtitle">My professional journey and academic background</p>
             </div>
-
             <div class="timeline">
-                <!-- Timeline Item 1 -->
+                <!-- Item 1 -->
                 <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content glass-card">
-                        <span class="timeline-date">2025 </span>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2025</span>
                         <h3>AI-ML Virtual Internship</h3>
-                        <p>Eduskills</p>
-                        <p class="timeline-description">
-                            Successfully completed a comprehensive AI & ML program.<br>Gained hands-on expertise in deep learning, neural networks, and practical AI applications.<br>Built projects that apply AI to solve real-world problems and sharpen technical skills.
-                        </p>
+                        <p class="timeline-org">Eduskills</p>
+                        <p>Completed a comprehensive AI & ML program with hands-on expertise in deep learning, 
+                        neural networks, and practical AI applications.</p>
                     </div>
                 </div>
 
-                <!-- Timeline Item 2 -->
+                <!-- Item 2 -->
                 <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content glass-card">
-                        <span class="timeline-date">2024 </span>
-                        <h3>Python Full Stack Developer Certification</h3>
-                        <p>Eduskills</p>
-                        <p class="timeline-description">
-                            Completed comprehensive Full Stack Development with Python. Mastered frontend and backend technologies 
-                            including web frameworks, databases, and deployment strategies.
-                        </p>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2024</span>
+                        <h3>Python Full Stack Developer</h3>
+                        <p class="timeline-org">Eduskills</p>
+                        <p>Completed comprehensive Full Stack Development with Python, mastering frontend 
+                        and backend technologies including web frameworks and databases.</p>
                     </div>
                 </div>
 
-                <!-- Timeline Item 3 -->
+                <!-- Item 3 -->
                 <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content glass-card">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
                         <span class="timeline-date">2024</span>
                         <h3>Java: Mastering the Fundamentals</h3>
-                        <p>Scalar</p>
-                        <p class="timeline-description">
-                            Completed comprehensive Java fundamentals course. Strong foundation in OOP, data structures, and 
-                            enterprise Java applications.
-                        </p>
+                        <p class="timeline-org">Scalar</p>
+                        <p>Completed comprehensive Java fundamentals course with strong foundation in OOP, 
+                        data structures, and enterprise Java applications.</p>
                     </div>
                 </div>
 
-                <!-- Timeline Item 4 -->
+                <!-- Item 4 -->
                 <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content glass-card">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
                         <span class="timeline-date">2023 - 2027</span>
                         <h3>B.Tech in AI & Machine Learning</h3>
-                        <p>Guru Nanak Institute of Technology, Hyderabad</p>
-                        <p class="timeline-description">
-                            Pursuing Bachelor of Technology specializing in Artificial Intelligence and Machine Learning. 
-                            Gaining deep knowledge in AI algorithms, ML models, and practical implementations.
-                        </p>
+                        <p class="timeline-org">Guru Nanak Institute of Technology, Hyderabad</p>
+                        <p>Pursuing Bachelor of Technology specializing in Artificial Intelligence and 
+                        Machine Learning with deep knowledge in AI algorithms and ML models.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Events Section -->
-    <section id="events" class="events">
+    <!-- Events & Achievements Section -->
+    <section id="achievements" class="section achievements">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Events & Competitions</h2>
-                <div class="title-underline"></div>
+                <h2 class="section-title">Events & Achievements</h2>
+                <p class="section-subtitle">Hackathons, competitions, and leadership roles</p>
             </div>
-
-            <!-- Participated Events Timeline -->
-            <div class="events-category">
-                <h3 class="category-title">Hackathons & Competitions Participated</h3>
-                <div class="events-timeline">
-                    <div class="event-timeline-item">
-                        <div class="event-timeline-dot"></div>
-                        <div class="event-timeline-content glass-card">
-                            <h4>E-Yantra Robotics Competition – IIT Bombay (2024)</h4>
-                            <p class="event-description">Participated in this prestigious national-level competition focused on embedded systems, robotics control, and automation challenges.<br>Gained hands-on experience in hardware–software integration and tackling real-time robotics tasks.<br>Enhanced problem-solving, teamwork, and practical engineering skills in a competitive environment.</p>
-                        </div>
-                    </div>
-
-                    <div class="event-timeline-item">
-                        <div class="event-timeline-dot"></div>
-                        <div class="event-timeline-content glass-card">
-                            <h4>Geeks For Geeks Hackathon – Malla Reddy College (2024)</h4>
-                            <p class="event-description">Competed in a large-scale hackathon focused on coding, innovation, and problem-solving.<br>Demonstrated skills in Full-Stack Development and building scalable technical solutions.<br>Gained hands-on experience working under pressure and delivering functional, impactful projects.</p>
-                        </div>
-                    </div>
-
-                    <div class="event-timeline-item">
-                        <div class="event-timeline-dot"></div>
-                        <div class="event-timeline-content glass-card">
-                            <h4>Robotics Club Member (2024–2025)</h4>
-                            <p class="event-description">Actively contributed to mini robotics projects, sensor integration, and automation workflows.<br>Gained experience in hardware–software co-design, experimentation, and testing.<br>Participated in workshops and collaborative sessions to enhance practical engineering skills.</p>
-                        </div>
-                    </div>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-icon"><i class="fas fa-trophy"></i></div>
+                    <h3>Departmental Hackathon Winner</h3>
+                    <p class="achievement-org">GNIT - 2025</p>
+                    <p>Led Team KANYARASI to 1st place, building an AI-integrated tech solution.</p>
                 </div>
-            </div>
-
-            <!-- Hosted/Worked Events Timeline -->
-            <div class="events-category">
-                <h3 class="category-title">Hackathons & Events Hosted/Worked</h3>
-                <div class="events-timeline">
-                    <div class="event-timeline-item hosted">
-                        <div class="event-timeline-dot"></div>
-                        <div class="event-timeline-content glass-card hosted-event">
-                            <h4>🏆 Departmental Hackathon – WINNER (GNIT - 2025)</h4>
-                            <p class="event-description">As Team Lead of TEAM KANYARASI, I guided our team to 1st place in the departmental hackathon.<br>We conceptualized and built an impactful tech project integrating AI, automation, and user-centric design.<br>Led brainstorming sessions, delegated tasks, and ensured smooth collaboration, turning ideas into a practical, award-winning solution.<br>The win was a testament to creativity, innovation, and teamwork, marking a highlight in my journey as a developer and leader.</p>
-                        </div>
-                    </div>
-
-                    <div class="event-timeline-item hosted">
-                        <div class="event-timeline-dot"></div>
-                        <div class="event-timeline-content glass-card hosted-event">
-                            <h4>Technical Quiz Competition – WINNER (2025)</h4>
-                            <p class="event-description">As Team leader, I guided our team to victory in the inter-department technical quiz competition.<br>The journey strengthened our team coordination, quick reasoning, and subject expertise, turning preparation into results.<br>Leading the team to the winning position was a proud moment that highlighted strategy, knowledge, and collaboration.</p>
-                        </div>
-                    </div>
-
-                    <div class="event-timeline-item hosted">
-                        <div class="event-timeline-dot"></div>
-                        <div class="event-timeline-content glass-card hosted-event">
-                            <h4>VisionX – Project Contributor & Marketing Lead</h4>
-                            <p class="event-date">2024–2025</p>
-                            <p class="event-description">Played a dual role in event coordination and marketing for VisionX cultural club. Contributed to planning and organizing events, workshops, and competitions. Managed outreach, promotions, and content creation to increase participation and visibility.</p>
-                        </div>
-                    </div>
-
-                    <div class="event-timeline-item hosted">
-                        <div class="event-timeline-dot"></div>
-                        <div class="event-timeline-content glass-card hosted-event">
-                            <h4>Hosted Technical Workshops & Hackathons (GNIT)</h4>
-                            <p class="event-description">As lead coordinator, I spearheaded multiple technical events, including hackathons, coding sessions, and workshops.<br>Managed event planning, execution, and participant guidance, ensuring smooth operations from start to finish.<br>Through meticulous organization and hands-on involvement, I turned every event into a successful, impactful learning experience.<br>This experience strengthened my leadership, teamwork, and problem-solving skills, reflecting the hard work behind the scenes.</p>
-                        </div>
-                    </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon"><i class="fas fa-question-circle"></i></div>
+                    <h3>Technical Quiz Winner</h3>
+                    <p class="achievement-org">2025</p>
+                    <p>Led team to victory in inter-department technical quiz competition.</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon"><i class="fas fa-robot"></i></div>
+                    <h3>E-Yantra Robotics Competition</h3>
+                    <p class="achievement-org">IIT Bombay - 2024</p>
+                    <p>Participated in national-level robotics competition with embedded systems challenges.</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3>Geeks For Geeks Hackathon</h3>
+                    <p class="achievement-org">Malla Reddy College - 2024</p>
+                    <p>Competed in large-scale hackathon focused on full-stack development.</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon"><i class="fas fa-users"></i></div>
+                    <h3>VisionX Marketing Lead</h3>
+                    <p class="achievement-org">2024-2025</p>
+                    <p>Dual role in event coordination and marketing for VisionX cultural club.</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <h3>Technical Workshop Host</h3>
+                    <p class="achievement-org">GNIT</p>
+                    <p>Spearheaded multiple technical events including hackathons and coding sessions.</p>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Catch Me If You Can Game Section -->
-    <section id="game" class="catch-game-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">⚡ Catch Me If You Can</h2>
-                <p class="game-subtitle">Try to catch me and unlock my contact details! 🎮</p>
-            </div>
-
-            <div class="game-container">
-                <div class="moving-target" id="movingTarget">
-                    <i class="fas fa-envelope"></i>
-                </div>
-                <p class="game-instruction">Click on me! 👉</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Info Modal (Hidden by default) -->
-    <div class="contact-modal" id="contactModal">
-        <div class="modal-content glass-card">
-            <div class="modal-header">
-                <h2>🎉 Great job! You caught me!</h2>
-                <button class="modal-close" id="closeModal">&times;</button>
-            </div>
-            
-            <div class="modal-body">
-                <p class="modal-subtitle">Here are my contact details:</p>
-                
-                <div class="contact-links">
-                    <a href="mailto:bagayithiharish@gmail.com" class="contact-link-btn">
-                        <i class="fas fa-envelope"></i>
-                        <span>Email</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/hareesh-bagayiti-22b33b34b" target="_blank" class="contact-link-btn">
-                        <i class="fab fa-linkedin"></i>
-                        <span>LinkedIn</span>
-                    </a>
-                    <a href="https://github.com/HAREESSHP" target="_blank" class="contact-link-btn">
-                        <i class="fab fa-github"></i>
-                        <span>GitHub</span>
-                    </a>
-                    <a href="HAREESH_RESUME.pdf" id="resume-modal-download" class="contact-link-btn" download>
-                        <i class="fas fa-file-download"></i>
-                        <span>Resume</span>
-                    </a>
-                </div>
-
-                <button class="btn btn-primary" style="width: 100%; margin-top: 2rem;">Let's Connect 🚀</button>
-            </div>
-        </div>
-    </div>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="section contact">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Get In Touch</h2>
-                <div class="title-underline"></div>
+                <p class="section-subtitle">Have a project in mind? Let's work together</p>
             </div>
-
-            <div class="contact-content">
+            <div class="contact-grid">
                 <div class="contact-info">
-                    <div class="contact-item glass-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
                         <h3>Email</h3>
-                        <p><a href="mailto:bagayithiharish@gmail.com">bagayithiharish@gmail.com</a></p>
+                        <a href="mailto:bagayithiharish@gmail.com">bagayithiharish@gmail.com</a>
                     </div>
-
-                    <div class="contact-item glass-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon"><i class="fas fa-phone"></i></div>
                         <h3>Phone</h3>
-                        <p><a href="tel:+919346315298">+91-9346315298</a></p>
+                        <a href="tel:+919346315298">+91-9346315298</a>
                     </div>
-
-                    <div class="contact-item glass-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon"><i class="fas fa-map-marker-alt"></i></div>
                         <h3>Location</h3>
                         <p>Hyderabad, India</p>
                     </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon"><i class="fas fa-file-alt"></i></div>
+                        <h3>Resume</h3>
+                        <a href="HAREESH_RESUME.pdf" download>Download Resume</a>
+                    </div>
                 </div>
-
-                <form class="contact-form glass-card" id="contact-form">
-                    <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
-                        <span class="input-focus"></span>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <input type="text" name="name" placeholder="Your Name" required>
                     </div>
-
-                    <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
-                        <span class="input-focus"></span>
+                    <div class="form-row">
+                        <input type="email" name="email" placeholder="Your Email" required>
                     </div>
-
-                    <div class="form-group">
-                        <input type="text" placeholder="Subject" required>
-                        <span class="input-focus"></span>
+                    <div class="form-row">
+                        <input type="text" name="subject" placeholder="Subject" required>
                     </div>
-
-                    <div class="form-group">
-                        <textarea placeholder="Your Message" rows="5" required></textarea>
-                        <span class="input-focus"></span>
+                    <div class="form-row">
+                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
                     </div>
-
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">
-                        Send Message
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-paper-plane"></i> Send Message
                     </button>
                 </form>
             </div>
         </div>
     </section>
-
-    <!-- Scroll to Top Button -->
-    <button id="scroll-top" class="scroll-top-btn">
-        <i class="fas fa-arrow-up"></i>
-    </button>
 
     <!-- Footer -->
     <footer class="footer">
@@ -608,16 +429,25 @@
             <div class="footer-content">
                 <p>&copy; 2025 Hareesh Bagayiti. All rights reserved.</p>
                 <div class="footer-social">
-                    <a href="https://www.linkedin.com/in/hareesh-bagayiti-22b33b34b" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/HAREESSHP" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://hareesshp.github.io/PORTFOLIO-SITE/" target="_blank"><i class="fas fa-globe"></i></a>
+                    <a href="https://github.com/HAREESSHP" target="_blank" rel="noopener" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/hareesh-bagayiti-22b33b34b" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:bagayithiharish@gmail.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <!-- Scroll to Top -->
+    <button id="scrollTop" class="scroll-top-btn" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <script src="script.js"></script>
 </body>
 </html>

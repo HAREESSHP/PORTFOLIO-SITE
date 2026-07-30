@@ -1,464 +1,248 @@
-/* ==========================================
-   MODERN PORTFOLIO WEBSITE - JAVASCRIPT
-   Advanced Animations & Interactive Features
-   ========================================== */
+/**
+ * PROFESSIONAL PORTFOLIO - JAVASCRIPT
+ * Hareesh Bagayiti - Full Stack Developer
+ * Clean, minimal, and functional
+ */
 
-// ==========================================
-// DARK MODE TOGGLE
-// ==========================================
-const themeToggle = document.getElementById('theme-toggle');
-const htmlElement = document.documentElement;
+document.addEventListener('DOMContentLoaded', () => {
 
-const currentTheme = localStorage.getItem('theme') || 'dark';
-htmlElement.setAttribute('data-theme', currentTheme);
-updateThemeIcon(currentTheme);
+    /* ============================================
+       1. MOBILE MENU TOGGLE
+       ============================================ */
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
 
-themeToggle.addEventListener('click', () => {
-    const theme = htmlElement.getAttribute('data-theme');
-    const newTheme = theme === 'dark' ? 'light' : 'dark';
-    htmlElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    updateThemeIcon(newTheme);
-});
+    if (mobileBtn && navMenu) {
+        mobileBtn.addEventListener('click', () => {
+            mobileBtn.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
 
-function updateThemeIcon(theme) {
-    const icon = themeToggle.querySelector('i');
-    if (theme === 'dark') {
-        icon.classList.remove('fa-sun');
-        icon.classList.add('fa-moon');
-    } else {
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-sun');
-    }
-}
-
-// ==========================================
-// TYPEWRITER EFFECT
-// ==========================================
-const typewriterElement = document.querySelector('.typewriter');
-const roles = [
-    'Full Stack Developer',
-    'AI & ML Enthusiast',
-    'Problem Solver',
-    'Tech Innovator',
-    'Web Developer'
-];
-
-let roleIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-
-function typewriterEffect() {
-    const currentRole = roles[roleIndex];
-    
-    if (isDeleting) {
-        charIndex--;
-    } else {
-        charIndex++;
-    }
-    
-    typewriterElement.textContent = currentRole.substring(0, charIndex);
-    
-    if (!isDeleting && charIndex === currentRole.length) {
-        isDeleting = true;
-        setTimeout(typewriterEffect, 2000);
-        return;
-    }
-    
-    if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        roleIndex = (roleIndex + 1) % roles.length;
-        setTimeout(typewriterEffect, 500);
-        return;
-    }
-    
-    setTimeout(typewriterEffect, isDeleting ? 30 : 50);
-}
-
-typewriterEffect();
-
-// ==========================================
-// SMOOTH SCROLL
-// ==========================================
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+        // Close menu when clicking a nav link
+        navMenu.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileBtn.classList.remove('active');
+                navMenu.classList.remove('active');
             });
-        }
-    });
-});
-
-// ==========================================
-// INTERSECTION OBSERVER - SCROLL REVEAL
-// ==========================================
-const revealOptions = {
-    threshold: 0.15,
-    rootMargin: '0px 0px -100px 0px'
-};
-
-const revealOnScroll = new IntersectionObserver(function(entries, observer) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-            observer.unobserve(entry.target);
-        }
-    });
-}, revealOptions);
-
-document.querySelectorAll('section').forEach(section => {
-    section.style.opacity = '0';
-    section.style.transform = 'translateY(30px)';
-    section.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
-    revealOnScroll.observe(section);
-});
-
-// ==========================================
-// MAGNETIC BUTTON EFFECT
-// ==========================================
-const magneticButtons = document.querySelectorAll('.magnetic-btn');
-
-magneticButtons.forEach(button => {
-    button.addEventListener('mousemove', (e) => {
-        const rect = button.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-        
-        const distance = Math.sqrt(x * x + y * y);
-        const maxDistance = 50;
-        
-        if (distance < maxDistance) {
-            const moveX = (x / distance) * 15;
-            const moveY = (y / distance) * 15;
-            button.style.transform = `translate(${moveX}px, ${moveY}px)`;
-        }
-    });
-    
-    button.addEventListener('mouseleave', () => {
-        button.style.transform = 'translate(0, 0)';
-    });
-});
-
-// ==========================================
-// 3D TILT EFFECT FOR PROJECT CARDS
-// ==========================================
-VanillaTilt.init(document.querySelectorAll('.project-card[data-tilt]'), {
-    max: 25,
-    speed: 400,
-    scale: 1.05
-});
-
-// ==========================================
-// PARALLAX SCROLL EFFECT
-// ==========================================
-const parallaxBg = document.querySelector('.parallax-bg');
-
-window.addEventListener('scroll', () => {
-    if (parallaxBg) {
-        const scrollPosition = window.pageYOffset;
-        parallaxBg.style.transform = `translateY(${scrollPosition * 0.5}px)`;
+        });
     }
-});
 
-// ==========================================
-// CONTACT FORM HANDLING
-// ==========================================
-const contactForm = document.getElementById('contact-form');
+    /* ============================================
+       3. TYPEWRITER EFFECT
+       ============================================ */
+    const roles = [
+        'Full Stack Developer',
+        'AI/ML Enthusiast',
+        'Python Developer',
+        'Problem Solver'
+    ];
 
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        // Get form values
-        const nameInput = contactForm.querySelector('input[placeholder="Your Name"]');
-        const emailInput = contactForm.querySelector('input[placeholder="Your Email"]');
-        const subjectInput = contactForm.querySelector('input[placeholder="Subject"]');
-        const messageInput = contactForm.querySelector('textarea');
-        
-        const name = nameInput.value;
-        const email = emailInput.value;
-        const subject = subjectInput.value;
-        const message = messageInput.value;
-        
-        // Create WhatsApp message
-        const whatsappMessage = `Hello! 👋\n\nI have a message for you:\n\n*Name:* ${name}\n*Email:* ${email}\n*Subject:* ${subject}\n\n*Message:*\n${message}`;
-        
-        // Encode message for URL
-        const encodedMessage = encodeURIComponent(whatsappMessage);
-        
-        // WhatsApp number (with country code, no + or spaces)
-        const whatsappNumber = '919346315298';
-        
-        // Open WhatsApp Web
-        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-        
-        // Show notification
-        showNotification('Opening WhatsApp... 💬');
-        
-        // Open WhatsApp in new tab
-        setTimeout(() => {
-            window.open(whatsappURL, '_blank');
-        }, 500);
-        
-        // Reset form
-        contactForm.reset();
-    });
-}
+    const typewriter = document.querySelector('.typewriter');
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let isPaused = false;
 
-// ==========================================
-// NAVBAR SCROLL EFFECT
-// ==========================================
-let lastScrollTop = 0;
-const navbar = document.querySelector('.navbar');
+    function typeEffect() {
+        if (!typewriter) return;
 
-window.addEventListener('scroll', () => {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
-    if (scrollTop > 100) {
-        navbar.style.background = 'rgba(15, 23, 42, 0.95)';
-        navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.2)';
-    } else {
-        navbar.style.background = 'rgba(15, 23, 42, 0.8)';
-        navbar.style.boxShadow = 'none';
+        const currentRole = roles[roleIndex];
+        
+        if (isPaused) {
+            isPaused = false;
+            setTimeout(typeEffect, 2000);
+            return;
+        }
+
+        if (isDeleting) {
+            // Deleting
+            typewriter.textContent = currentRole.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            // Typing
+            typewriter.textContent = currentRole.substring(0, charIndex + 1);
+            charIndex++;
+        }
+
+        let speed = isDeleting ? 40 : 80;
+
+        if (!isDeleting && charIndex === currentRole.length) {
+            // Finished typing - pause then delete
+            speed = 2000;
+            isPaused = true;
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            // Finished deleting - move to next word
+            isDeleting = false;
+            roleIndex = (roleIndex + 1) % roles.length;
+            speed = 500;
+        }
+
+        setTimeout(typeEffect, speed);
     }
-    
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-});
 
-// ==========================================
-// SCROLL TO TOP BUTTON
-// ==========================================
-const scrollTopBtn = document.getElementById('scroll-top');
-
-window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 300) {
-        scrollTopBtn.classList.add('show');
-    } else {
-        scrollTopBtn.classList.remove('show');
+    // Start typewriter after a short delay
+    if (typewriter) {
+        setTimeout(typeEffect, 500);
     }
-});
 
-scrollTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
+    /* ============================================
+       4. SCROLL TO TOP BUTTON
+       ============================================ */
+    const scrollBtn = document.getElementById('scrollTop');
 
-// ==========================================
-// PROJECT FILTER FUNCTIONALITY
-// ==========================================
-const filterBtns = document.querySelectorAll('.filter-btn');
-const projectCards = document.querySelectorAll('.project-card');
-
-filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        
-        const filter = btn.getAttribute('data-filter');
-        
-        projectCards.forEach(card => {
-            if (filter === 'all') {
-                card.classList.remove('hidden');
-                card.classList.add('show');
+    if (scrollBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                scrollBtn.classList.add('show');
             } else {
-                const categories = card.getAttribute('data-category').split(' ');
-                if (categories.includes(filter)) {
-                    card.classList.remove('hidden');
-                    card.classList.add('show');
+                scrollBtn.classList.remove('show');
+            }
+        });
+
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    /* ============================================
+       5. ACTIVE NAV LINK ON SCROLL
+       ============================================ */
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    function updateActiveLink() {
+        let current = '';
+        const scrollPos = window.scrollY + 100;
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+
+            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.style.color = '';
+            if (link.getAttribute('href') === `#${current}`) {
+                link.style.color = 'var(--primary)';
+            }
+        });
+    }
+
+    window.addEventListener('scroll', updateActiveLink);
+    updateActiveLink();
+
+    /* ============================================
+       6. CONTACT FORM HANDLING
+       ============================================ */
+    const contactForm = document.getElementById('contactForm');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            // Show loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+
+            // Get form data
+            const formData = new FormData(contactForm);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                subject: formData.get('subject'),
+                message: formData.get('message')
+            };
+
+            // Build mailto link as fallback
+            const mailtoLink = `mailto:bagayithiharish@gmail.com?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(
+                `Name: ${data.name}\nEmail: ${data.email}\n\n${data.message}`
+            )}`;
+
+            try {
+                // Attempt to send via Formspree (free service)
+                const response = await fetch('https://formspree.io/f/xpwqkqwg', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    // Show success
+                    contactForm.innerHTML = `
+                        <div class="form-success">
+                            <i class="fas fa-check-circle"></i>
+                            <h3>Message Sent!</h3>
+                            <p>Thank you for reaching out. I'll get back to you soon.</p>
+                        </div>
+                    `;
                 } else {
-                    card.classList.add('hidden');
-                    card.classList.remove('show');
+                    throw new Error('Form submission failed');
                 }
+            } catch (error) {
+                // Fallback: open mailto link
+                window.location.href = mailtoLink;
+                
+                // Reset form
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                contactForm.reset();
+            }
+        });
+    }
+
+    /* ============================================
+       7. SMOOTH SCROLL FOR NAV (Fallback)
+       ============================================ */
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href === '#') return;
+            
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                const offset = 80; // navbar height
+                const targetPos = target.getBoundingClientRect().top + window.scrollY - offset;
+                window.scrollTo({ top: targetPos, behavior: 'smooth' });
             }
         });
     });
-});
 
-// ==========================================
-// CATCH ME IF YOU CAN - GAME LOGIC
-// ==========================================
-
-// Game Variables
-let gameActive = true;
-let targetElement = document.getElementById('movingTarget');
-let gameContainer = document.querySelector('.game-container');
-let contactModal = document.getElementById('contactModal');
-let closeModalBtn = document.getElementById('closeModal');
-let minDistance = 50; // Very small escape radius
-let escapeCounter = 0;
-let maxEscapes = 1; // Only 1 escape, then it's catchable
-
-// Function to generate random position
-function getRandomPosition() {
-    if (!gameContainer) return { x: 0, y: 0 };
-    
-    const containerRect = gameContainer.getBoundingClientRect();
-    const maxX = containerRect.width - 80; // 80 is target size
-    const maxY = containerRect.height - 80;
-    
-    return {
-        x: Math.random() * maxX,
-        y: Math.random() * maxY
+    /* ============================================
+       8. INTERSECTION OBSERVER (Reveal Animations)
+       ============================================ */
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
     };
-}
 
-// Function to update target position
-function moveTarget() {
-    if (!targetElement || !gameActive) return;
-    
-    const newPos = getRandomPosition();
-    targetElement.style.left = newPos.x + 'px';
-    targetElement.style.top = newPos.y + 'px';
-}
-
-// Initialize target position on page load
-window.addEventListener('load', function() {
-    if (targetElement && gameContainer) {
-        moveTarget();
-        escapeCounter = 0;
-        
-        // Move target every 2-2.5 seconds
-        const moveInterval = setInterval(() => {
-            if (!gameActive) {
-                clearInterval(moveInterval);
-                return;
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
             }
-            moveTarget();
-            escapeCounter = 0; // Reset escape counter on natural move
-        }, 2000 + Math.random() * 500);
-    }
+        });
+    }, observerOptions);
+
+    // Observe all cards and items for fade-in animation
+    document.querySelectorAll(
+        '.project-card, .skill-card, .achievement-card, .timeline-item, .stat-item, .contact-item'
+    ).forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        observer.observe(el);
+    });
+
 });
-
-// Handle mouse movement for escape effect
-document.addEventListener('mousemove', function(e) {
-    if (!targetElement || !gameActive || !gameContainer) return;
-    
-    const targetRect = targetElement.getBoundingClientRect();
-    const targetCenterX = targetRect.left + targetRect.width / 2;
-    const targetCenterY = targetRect.top + targetRect.height / 2;
-    
-    // Calculate distance between mouse and target
-    const distanceX = e.clientX - targetCenterX;
-    const distanceY = e.clientY - targetCenterY;
-    const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
-    
-    // If mouse is too close, escape! But only after a few escapes, it gives up
-    if (distance < minDistance && escapeCounter < maxEscapes) {
-        escapeCounter++;
-        moveTarget();
-        
-        // Add wiggle animation to show it's nervous
-        targetElement.style.animation = 'wiggle 0.2s ease';
-        setTimeout(() => {
-            if (gameActive) {
-                targetElement.style.animation = 'floatTarget 4s ease-in-out infinite';
-            }
-        }, 200);
-    }
-});
-
-// Handle target click to catch the target
-if (targetElement) {
-    targetElement.addEventListener('click', function(e) {
-        e.stopPropagation();
-        if (!gameActive) return;
-        
-        gameActive = false;
-        
-        // Add celebration animation
-        targetElement.style.animation = 'celebration 0.6s ease';
-        
-        // Show celebration message
-        setTimeout(() => {
-            if (contactModal) {
-                contactModal.classList.add('active');
-            }
-            gameActive = true;
-        }, 300);
-    });
-}
-
-// Handle modal close button
-if (closeModalBtn) {
-    closeModalBtn.addEventListener('click', function() {
-        if (contactModal) {
-            contactModal.classList.remove('active');
-            gameActive = true;
-        }
-    });
-}
-
-// Close modal when clicking outside content
-if (contactModal) {
-    contactModal.addEventListener('click', function(e) {
-        if (e.target === contactModal) {
-            contactModal.classList.remove('active');
-            gameActive = true;
-        }
-    });
-}
-
-// Add celebration animation
-const celebrationKeyframes = `
-    @keyframes celebration {
-        0% { transform: scale(1) rotate(0deg); }
-        25% { transform: scale(1.2) rotate(-10deg); }
-        50% { transform: scale(0.9) rotate(10deg); }
-        75% { transform: scale(1.15) rotate(-5deg); }
-        100% { transform: scale(1) rotate(0deg); }
-    }
-`;
-
-// Inject celebration keyframes if not already present
-const style = document.createElement('style');
-style.textContent = celebrationKeyframes;
-document.head.appendChild(style);
-
-// ==========================================
-// RESUME DOWNLOAD
-// ==========================================
-const resumeDownloadBtn = document.getElementById('resume-download');
-const resumeModalDownloadBtn = document.getElementById('resume-modal-download');
-
-function downloadResume(e) {
-    e.preventDefault();
-    const link = document.createElement('a');
-    link.href = 'HAREESH_RESUME.pdf';
-    link.download = 'HAREESH_Bagayiti_Resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    showNotification('Resume downloading...');
-}
-
-if (resumeDownloadBtn) {
-    resumeDownloadBtn.addEventListener('click', downloadResume);
-}
-
-if (resumeModalDownloadBtn) {
-    resumeModalDownloadBtn.addEventListener('click', downloadResume);
-}
-
-// ==========================================
-// NOTIFICATION FUNCTION
-// ==========================================
-function showNotification(message) {
-    const notification = document.createElement('div');
-    notification.style.cssText = 'position:fixed;top:20px;right:20px;padding:1rem 1.5rem;background:linear-gradient(135deg,#6366f1,#ec4899);color:white;border-radius:0.75rem;box-shadow:0 4px 15px rgba(99,102,241,0.4);z-index:2000;font-weight:600;animation:slideInRight 0.3s ease';
-    notification.textContent = message;
-    document.body.appendChild(notification);
-    setTimeout(() => document.body.removeChild(notification), 3000);
-}
-
-// ==========================================
-// INITIALIZATION LOG
-// ==========================================
-console.log('%cPortfolio Website Loaded Successfully! 🚀', 'color: #6366f1; font-size: 14px; font-weight: bold;');
-console.log('%cAll features active: Dark Mode, Typewriter, Filters, Resume Download, Scroll-to-Top', 'color: #10b981; font-size: 12px;');
