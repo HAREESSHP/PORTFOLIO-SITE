@@ -133,23 +133,119 @@ document.addEventListener('DOMContentLoaded', () => {
        5. CONTACT FORM HANDLING
        ============================================ */
     const contactForm = document.getElementById('contactForm');
+    const formStatus = document.getElementById('formStatus');
 
     if (contactForm) {
+        const fields = {
+            name: contactForm.querySelector('[name="name"]'),
+            email: contactForm.querySelector('[name="email"]'),
+            subject: contactForm.querySelector('[name="subject"]'),
+            message: contactForm.querySelector('[name="message"]')
+        };
+
+        function showError(field, message) {
+            const errorEl = contactForm.querySelector(`[data-error-for="${field.name}"]`);
+            if (errorEl) {
+                errorEl.textContent = message;
+                errorEl.classList.add('show');
+            }
+            field.classList.add('invalid');
+        }
+
+        function clearError(field) {
+            const errorEl = contactForm.querySelector(`[data-error-for="${field.name}"]`);
+            if (errorEl) {
+                errorEl.textContent = '';
+                errorEl.classList.remove('show');
+            }
+            field.classList.remove('invalid');
+        }
+
+        function clearAllErrors() {
+            Object.values(fields).forEach(clearError);
+        }
+
+        function setStatus(type, message) {
+            if (!formStatus) return;
+            formStatus.className = 'form-status show ' + type;
+            formStatus.innerHTML = type === 'success'
+                ? `<i class="fas fa-check-circle"></i> ${message}`
+                : `<i class="fas fa-exclamation-circle"></i> ${message}`;
+        }
+
+        function clearStatus() {
+            if (!formStatus) return;
+            formStatus.className = 'form-status';
+            formStatus.innerHTML = '';
+        }
+
+        function validateField(field) {
+            const value = field.value.trim();
+
+            if (!value) {
+                showError(field, 'This field is required.');
+                return false;
+            }
+
+            if (field.type === 'email') {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(value)) {
+                    showError(field, 'Please enter a valid email address.');
+                    return false;
+                }
+            }
+
+            if (field.name === 'subject' && value.length < 3) {
+                showError(field, 'Subject must be at least 3 characters.');
+                return false;
+            }
+
+            if (field.name === 'message' && value.length < 10) {
+                showError(field, 'Message must be at least 10 characters.');
+                return false;
+            }
+
+            clearError(field);
+            return true;
+        }
+
+        // Clear errors as the user types
+        Object.values(fields).forEach(field => {
+            field.addEventListener('input', () => {
+                clearError(field);
+                clearStatus();
+            });
+        });
+
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
+            clearAllErrors();
+            clearStatus();
+
+            let isValid = true;
+            Object.values(fields).forEach(field => {
+                if (!validateField(field)) isValid = false;
+            });
+
+            if (!isValid) {
+                setStatus('error', 'Please fix the highlighted fields and try again.');
+                const firstInvalid = contactForm.querySelector('.invalid');
+                if (firstInvalid) firstInvalid.focus();
+                return;
+            }
+
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
-            
+
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             submitBtn.disabled = true;
 
-            const formData = new FormData(contactForm);
             const data = {
-                name: formData.get('name'),
-                email: formData.get('email'),
-                subject: formData.get('subject'),
-                message: formData.get('message')
+                name: fields.name.value.trim(),
+                email: fields.email.value.trim(),
+                subject: fields.subject.value.trim(),
+                message: fields.message.value.trim()
             };
 
             const mailtoLink = `mailto:bagayithiharish@gmail.com?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(
@@ -175,10 +271,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     throw new Error('Form submission failed');
                 }
             } catch (error) {
+                setStatus('error', 'Could not send your message right now. Opening your email app instead...');
                 window.location.href = mailtoLink;
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
-                contactForm.reset();
             }
         });
     }
@@ -220,7 +316,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, observerOptions);
 
     document.querySelectorAll(
-        '.project-card, .skill-category, .achievement-card, .timeline-item, .stat-item, .contact-item'
+        '.project-card, .skill-category, .achievement-card, .career-item, .stat-item, .contact-item, .ach-card'
     ).forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
@@ -245,6 +341,39 @@ document.addEventListener('DOMContentLoaded', () => {
     const fpDots = document.getElementById('fpDots');
     const modalOverlay = document.getElementById('fpModalOverlay');
     const modalClose = document.getElementById('fpModalClose');
+
+    /* ============================================
+       9. ACHIEVEMENTS CAROUSEL NAVIGATION
+       ============================================ */
+    const achNavWrappers = document.querySelectorAll('.ach-nav-wrapper');
+
+    achNavWrappers.forEach(wrapper => {
+        const track = wrapper.querySelector('.ach-track');
+        const prevBtn = wrapper.querySelector('.ach-nav-prev');
+        const nextBtn = wrapper.querySelector('.ach-nav-next');
+
+        if (!track || !prevBtn || !nextBtn) return;
+
+        function updateBtnStates() {
+            const maxScroll = track.scrollWidth - track.clientWidth;
+            prevBtn.disabled = track.scrollLeft <= 5;
+            nextBtn.disabled = track.scrollLeft >= maxScroll - 5;
+        }
+
+        function scrollByCard(direction) {
+            const card = track.querySelector('.ach-card');
+            const scrollAmount = card ? card.offsetWidth + 20 : 280;
+            track.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+        }
+
+        prevBtn.addEventListener('click', () => scrollByCard(-1));
+        nextBtn.addEventListener('click', () => scrollByCard(1));
+        track.addEventListener('scroll', updateBtnStates);
+
+        // Initial state
+        updateBtnStates();
+        window.addEventListener('resize', updateBtnStates);
+    });
 
     if (!fpTrack) return;
 
