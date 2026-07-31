@@ -20,6 +20,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
@@ -475,7 +476,7 @@
                 <h2 class="section-title">Get In Touch</h2>
                 <p class="section-subtitle">Have a project in mind? Let's work together</p>
             </div>
-            <div class="contact-grid contact-grid-single">
+            <div class="contact-grid">
                 <form class="contact-form" id="contactForm" novalidate>
                     <div class="form-row">
                         <label class="form-label" for="cfName">Your Name</label>
@@ -502,25 +503,103 @@
                         <i class="fas fa-paper-plane"></i> Send Message
                     </button>
                 </form>
+                <div class="contact-gallery">
+                    <div class="contact-gallery-grid">
+                        <div class="contact-gallery-item contact-gallery-item-wide">
+                            <img src="IMG_6799.JPG" alt="Personal branding photo 1" loading="lazy">
+                            <div class="contact-gallery-overlay"><i class="fas fa-expand"></i></div>
+                        </div>
+                        <div class="contact-gallery-item">
+                            <img src="SNIST2.jpeg" alt="Personal branding photo 2" loading="lazy">
+                            <div class="contact-gallery-overlay"><i class="fas fa-expand"></i></div>
+                        </div>
+                        <div class="contact-gallery-item">
+                            <img src="T2.jpeg" alt="Personal branding photo 3" loading="lazy">
+                            <div class="contact-gallery-overlay"><i class="fas fa-expand"></i></div>
+                        </div>
+                        <div class="contact-gallery-item contact-gallery-item-wide">
+                            <img src="T4.jpeg" alt="Personal branding photo 4" loading="lazy">
+                            <div class="contact-gallery-overlay"><i class="fas fa-expand"></i></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2025 Hareesh Bagayiti. All rights reserved.</p>
-                <div class="footer-social">
-                    <a href="https://github.com/HAREESSHP" target="_blank" rel="noopener" aria-label="GitHub">
-                        <i class="fab fa-github"></i>
+    <footer class="bento-footer">
+        <div class="bento-grid">
+            <!-- About Card (50%) -->
+            <div class="bento-card bento-card-about">
+                <div class="bento-card-icon"><i class="fas fa-code"></i></div>
+                <h3 class="bento-card-title">About Me</h3>
+                <p class="bento-card-desc">
+                    Every project in this portfolio reflects my passion for building modern, user-centric, and impactful digital experiences.
+                </p>
+                <p class="bento-card-desc">
+                    I enjoy transforming ideas into scalable web applications and AI-powered solutions through clean code, creative thinking, and continuous learning.
+                </p>
+                <p class="bento-card-desc">
+                    Let's build something amazing together.
+                </p>
+            </div>
+
+            <!-- Contact Card (25%) -->
+            <div class="bento-card bento-card-contact">
+                <h3 class="bento-card-title">Contact</h3>
+                <div class="bento-contact-items">
+                    <div class="bento-contact-item">
+                        <div class="bento-contact-icon"><i class="fas fa-phone"></i></div>
+                        <div>
+                            <span class="bento-contact-label">Phone</span>
+                            <a href="tel:+919346315298" class="bento-contact-value">+91 9346315298</a>
+                        </div>
+                    </div>
+                    <div class="bento-contact-item">
+                        <div class="bento-contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <span class="bento-contact-label">Email</span>
+                            <a href="mailto:bagayithiharish@gmail.com" class="bento-contact-value">bagayithiharish@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="bento-contact-item">
+                        <div class="bento-contact-icon"><i class="fas fa-location-dot"></i></div>
+                        <div>
+                            <span class="bento-contact-label">Location</span>
+                            <span class="bento-contact-value">Guru Nanak Institutions</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Follow Me Card (25%) -->
+            <div class="bento-card bento-card-follow">
+                <h3 class="bento-card-title">Follow Me</h3>
+                <div class="bento-follow-buttons">
+                    <a href="https://github.com/HAREESSHP" target="_blank" rel="noopener" class="bento-follow-btn">
+                        <div class="bento-follow-icon"><i class="fab fa-github"></i></div>
+                        <span class="bento-follow-label">GitHub</span>
+                        <i class="fas fa-chevron-right bento-follow-arrow"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/hareesh-bagayiti-22b33b34b" target="_blank" rel="noopener" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
+                    <a href="https://www.linkedin.com/in/hareesh-bagayiti-22b33b34b" target="_blank" rel="noopener" class="bento-follow-btn">
+                        <div class="bento-follow-icon"><i class="fab fa-linkedin-in"></i></div>
+                        <span class="bento-follow-label">LinkedIn</span>
+                        <i class="fas fa-chevron-right bento-follow-arrow"></i>
                     </a>
-                    <a href="mailto:bagayithiharish@gmail.com" aria-label="Email">
-                        <i class="fas fa-envelope"></i>
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener" class="bento-follow-btn">
+                        <div class="bento-follow-icon"><i class="fab fa-instagram"></i></div>
+                        <span class="bento-follow-label">Instagram</span>
+                        <i class="fas fa-chevron-right bento-follow-arrow"></i>
                     </a>
                 </div>
+            </div>
+        </div>
+
+        <!-- Bottom Copyright -->
+        <div class="bento-bottom">
+            <div class="bento-bottom-inner">
+                <p>&copy; 2026 All Rights Reserved</p>
+                <p class="bento-credit">Designed & Developed by <a href="https://www.linkedin.com/in/hareesh-bagayiti-22b33b34b" target="_blank" rel="noopener" class="bento-credit-name">Hareesh</a></p>
             </div>
         </div>
     </footer>
