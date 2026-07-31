@@ -1987,7 +1987,7 @@ a.bento-contact-value:hover {
 /* Carousel */
 .fp-carousel {
     position: relative;
-    max-width: 900px;
+    max-width: 980px;
     width: 100%;
     margin: 0 auto;
     padding: 0 60px;
@@ -2010,7 +2010,7 @@ a.bento-contact-value:hover {
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
-    padding: 32px;
+    padding: 36px;
     box-shadow: var(--shadow);
     transition: all var(--transition-slow);
     cursor: pointer;
