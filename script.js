@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
        ============================================ */
     const roles = [
         'Full Stack Developer',
+        'Frontend Developer',
         'AI/ML Enthusiast',
         'Python Developer',
         'Problem Solver'

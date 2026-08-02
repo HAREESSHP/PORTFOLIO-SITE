@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hareesshp.github.io/PORTFOLIO-SITE/sitemap.xml
